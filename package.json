@@ -1,0 +1,26 @@
+{
+  "name": "trial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pb:win:gen": "powershell -ExecutionPolicy unrestricted ./scripts/gen.ps1 sensor_data trial s_data",
+    "sensor-server":"node ./sensor_data/server/index.js",
+    "sensor-client":"node ./sensor_data/client/index.js",
+    "s-server":"node ./s_data/server/index.js",
+    "s-client":"node ./s_data/client/index.js", 
+    "trial-server":"node ./trial/server/index.js",
+    "trial-client":"node ./trial/client/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.14",
+    "google-protobuf": "^3.21.2"
+  },
+  "devDependencies": {
+    "grpc-tools": "^1.12.4"
+  }
+}

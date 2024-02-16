@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package sensor;
+
+// The sensor service definition.
+service SensorService {
+  // Server streaming RPC
+  rpc StreamSensorData(StreamRequest) returns (stream SensorData);
+}
+
+// The request message containing the streaming rate.
+message StreamRequest {
+  int32 rate = 1;
+}
+
+// The sensor data message.
+message SensorData {
+  int64 timestamp = 1;
+  string sensorId = 2;
+  double value = 3;
+  // Add more fields as necessary
+}
